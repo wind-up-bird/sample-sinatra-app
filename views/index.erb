@@ -1,0 +1,9 @@
+<form method="get" action="/new">
+  <p><input type="submit" value="追加"></p>
+</form>
+
+<ul>
+  <% @id_title_list.each do |id, title| %>
+    <li><a href="<%= @url %>/detail/<%= id %>"><%= title %></a></li>
+  <% end %>
+</ul>

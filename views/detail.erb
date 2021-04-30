@@ -1,0 +1,15 @@
+<section>
+  <h2><%= @title %></h2>
+  <% # TODO: XSS 的に良くないはず %>
+  <p><%= h(@content).gsub(/\r\n|\n|\r/, "<br>") %></p>
+
+  <form method="get" action="/detail/<%= @id %>/edit">
+    <p><input type="submit" value="変更"></p>
+  </form>
+  
+  <form method="post" action="/detail/<%= @id %>">
+    <p><input type="hidden" name="_method" value="DELETE"></p>
+    <p><input type="submit" value="削除"></p>
+  </form>
+</section>
+
